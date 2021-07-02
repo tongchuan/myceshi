@@ -24,6 +24,10 @@ module.exports = {
           "typescript": {}
       }
     },
+    "globals":{
+        "expect": true,
+        "test": true
+    },
     "rules": {
       "no-console": 0, //不禁用console
         "no-irregular-whitespace": 0, //不规则的空白不允许
