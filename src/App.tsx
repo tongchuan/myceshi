@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-const abd: number = 222
+
+const abd: number = 222;
 function App() {
   return (
     <div className="App">
