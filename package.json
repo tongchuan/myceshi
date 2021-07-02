@@ -23,6 +23,14 @@
     "fix":" eslint --fix --ext .js --ext .jsx --ext .js --ext .ts --ext .tsx src/",
     "eject": "react-scripts eject"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+   "src/**/*.{jsx,txs,ts,js,vue}": ["eslint --fix", "git add"]
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
