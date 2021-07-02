@@ -21,17 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "fix": "eslint --fix --ext .js --ext .jsx --ext .js --ext .ts --ext .tsx src/",
-    "eject": "react-scripts eject",
-    "precommit": "npm run fix",
-    "prepush": "npm run fix"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "echo zhangtongchuan && lint-staged"
-    }
-  },
-  "lint-staged": {
-   "src/**/*.{jsx,txs,ts,js,vue}": ["eslint --fix", "git add"]
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -60,6 +50,7 @@
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^7.0.0"
   }
 }
