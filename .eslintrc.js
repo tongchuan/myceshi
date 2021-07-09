@@ -26,7 +26,9 @@ module.exports = {
     },
     "globals":{
         "expect": true,
-        "test": true
+        "test": true,
+        "NodeJS": true,
+        "ProcessEnv": true
     },
     "rules": {
       "no-console": 0, //不禁用console

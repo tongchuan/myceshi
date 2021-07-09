@@ -1,0 +1,4 @@
+src/*.test.jsx
+build
+src/test/a.js
+static/dist
