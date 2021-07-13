@@ -1,11 +1,40 @@
-import React from 'react';
+import React, {
+  lazy,
+  Suspense,
+  useState,
+  useEffect
+} from 'react';
+import { HashRouter, Switch, Route } from 'react-router-dom';
+import AppContext from './context/AppContext';
+import Navigation from './components/Navigation';
+import Loading from './components/Loading';
 
-function App() {
+const News = lazy(() => import('./pages/News'));
+const Product = lazy(() => import('./pages/Product'));
+console.log('@', 'SRC');
+export default function App() {
+  const defaultData = { name: 333, age: 666 };
+  const [context, setContext] = useState(defaultData);
+  useEffect(() => {
+    setTimeout(() => {
+      setContext({
+        name: Math.random(),
+        age: Math.random()
+      });
+    }, 3000);
+  }, []);
   return (
-    <div className="App">
-      Hello React typescript
-    </div>
+    <AppContext.Provider value={context}>
+      <Suspense fallback={(<Loading />)}>
+        <HashRouter>
+          <Navigation />
+          <Switch>
+            <Route exact path="/" component={News} />
+            <Route exact path="/news" component={News} />
+            <Route exact path="/product" component={Product} />
+          </Switch>
+        </HashRouter>
+      </Suspense>
+    </AppContext.Provider>
   );
 }
-
-export default App;

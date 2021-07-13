@@ -1,4 +1,5 @@
-src/*.test.jsx
+src/*.test.tsx
 build
 src/test/a.js
 static/dist
+src/typings/**

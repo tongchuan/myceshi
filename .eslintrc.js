@@ -32,6 +32,7 @@ module.exports = {
     },
     "rules": {
       "no-console": 0, //不禁用console
+      "class-methods-use-this": 0,
         "no-irregular-whitespace": 0, //不规则的空白不允许
         "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx", "ts", "tsx"]}],//文件是.js还是.jsx
         "no-underscore-dangle": 0,
@@ -80,6 +81,8 @@ module.exports = {
         "react/jsx-indent-props": [2, 2], //验证JSX中的props缩进是否为2个
         "react/jsx-key": 2, //在数组或迭代器中验证JSX具有key属性
         "react/jsx-max-props-per-line": 0, // 限制JSX中单行上的props的最大数量
+        "react/jsx-wrap-multilines": 0,
+        'react/jsx-one-expression-per-line': 0, // 关闭 表达式占单行
         "react/jsx-no-bind": 0, //JSX中不允许使用箭头函数和bind
         "react/jsx-no-duplicate-props": 2, //防止在JSX中重复的props
         "react/jsx-no-literals": 0, //防止使用未包装的JSX字符串
@@ -100,6 +103,7 @@ module.exports = {
         "react/react-in-jsx-scope": 2, //使用JSX时防止丢失React
         "react/self-closing-comp": 0, //防止没有children的组件的额外结束标签
         "react/sort-comp": 2, //强制组件方法顺序
+        "react/jsx-fragments": [0],
         "no-extra-boolean-cast": 0, //禁止不必要的bool转换
         "react/no-array-index-key": 0, //防止在数组中遍历中使用数组key做索引
         "react/no-deprecated": 1, //不使用弃用的方法
@@ -208,7 +212,8 @@ module.exports = {
           "ignorePackages",
           {
             "ts": "never",
-            "tsx": "never"
+            "tsx": "never",
+            "js": "never",
           }
       ]
     }
