@@ -11,6 +11,8 @@ import Loading from './components/Loading';
 
 const News = lazy(() => import('./pages/News'));
 const Product = lazy(() => import('./pages/Product'));
+const Test = lazy(() => import('./pages/Test'));
+
 console.log('@', 'SRC');
 export default function App() {
   const defaultData = { name: 333, age: 666 };
@@ -29,7 +31,7 @@ export default function App() {
         <HashRouter>
           <Navigation />
           <Switch>
-            <Route exact path="/" component={News} />
+            <Route exact path="/" component={Test} />
             <Route exact path="/news" component={News} />
             <Route exact path="/product" component={Product} />
           </Switch>
