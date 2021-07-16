@@ -6,11 +6,10 @@ function Test() {
   useEffect(() => {
     setCount((prevCount) => (prevCount + 1));
   }, []);
+
+  
   return (
     <div>
-      {/*
-        <Navigation />
-      */}
       Product
       {count}
     </div>
