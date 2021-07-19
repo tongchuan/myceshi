@@ -14,8 +14,8 @@ interface stateInterface {
 }
 
 function TestChild(props: childInterface) {
-  const { child } = props;
-  console.log(child, child.width);
+  const { width } = props;
+  console.log(width);
   return (
     <div className="test-child">
       <h1>Test</h1>
@@ -41,7 +41,12 @@ class Test extends React.Component<any, stateInterface> {
     document.body.appendChild(element);
   }
 
-  onFocus() {
+  componentWillUnmount() {
+    document.body.removeChild(element);
+  }
+
+  onFocus(event: React.SyntheticEvent) {
+    console.log(event);
     this.setState({
       isShow: true
     });
@@ -52,7 +57,7 @@ class Test extends React.Component<any, stateInterface> {
     return (
       <div>
         <input type="text" onFocus={this.onFocus} />
-        {isShow && ReactDOM.createPortal(<TestChild child={child} />, element)}
+        {isShow && ReactDOM.createPortal(<TestChild width={child.width} />, element)}
       </div>
     );
   }
